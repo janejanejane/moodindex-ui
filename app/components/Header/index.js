@@ -17,6 +17,7 @@ function Header() {
       <FormattedMessage {...messages.header} />
       <nav>
         <ul>
+          <li><Link to="/">Home</Link></li>
           <li><Link to="/me">Me</Link></li>
           <li><Link to="/moods">Moods</Link></li>
         </ul>

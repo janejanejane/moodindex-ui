@@ -7,14 +7,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import A from 'components/A';
+import RadioButton from 'components/RadioButton';
 
 function Mood(props) {
-  const { type, ...others } = props;
+  const { type } = props;
   return (
-    <A {...others}>
+    <RadioButton type={type}>
       {type}
-    </A>
+    </RadioButton>
   );
 }
 

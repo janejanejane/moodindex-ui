@@ -13,6 +13,7 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
 import Mood from 'components/Mood';
+import SubmitButton from 'components/SubmitButton';
 import messages from './messages';
 
 export default class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
@@ -22,9 +23,12 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
         <h1>
           <FormattedMessage {...messages.header} />
         </h1>
-        <Mood href="#" type="happy" />
-        <Mood href="#" type="sad" />
-        <Mood href="#" type="angry" />
+        <form action="/" method="post">
+          <Mood type="happy" />
+          <Mood type="sad" />
+          <Mood type="angry" />
+          <SubmitButton />
+        </form>
       </div>
     );
   }
