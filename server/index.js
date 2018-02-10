@@ -12,14 +12,29 @@ const resolve = require('path').resolve;
 const app = express();
 const jsonServer = require('json-server');
 const db = require('./db');
-const router = jsonServer.router(db);
-const middlewares = jsonServer.defaults();
 
 // If you need a backend, e.g. an API, add your custom backend-specific middleware here
 // app.use('/api', myApi);
 
-app.use(middlewares);
-app.use('/api/v1', router);
+app.use(jsonServer.bodyParser);
+app.all('*', (req, res, next) => {
+  console.log('this is the method:', req.method);
+  if (req.method === 'POST') {
+    console.log('in here???', req);
+    req.body.createdAt = Date.now();
+    res.send(db.moodPost);
+  }
+  // Continue to JSON Server router
+  next();
+});
+
+app.use('/api/v1/me', (req, res) =>
+  res.redirect('/me')
+);
+
+app.use('/api/v1/moods', (req, res) =>
+  res.redirect('/moods')
+);
 
 // In production we need to pass these values in instead of relying on webpack
 setup(app, {

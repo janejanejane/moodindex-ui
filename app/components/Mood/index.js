@@ -10,9 +10,9 @@ import PropTypes from 'prop-types';
 import RadioButton from 'components/RadioButton';
 
 function Mood(props) {
-  const { type } = props;
+  const { type, value } = props;
   return (
-    <RadioButton type={type}>
+    <RadioButton type={type} value={value}>
       {type}
     </RadioButton>
   );
@@ -20,6 +20,7 @@ function Mood(props) {
 
 Mood.propTypes = {
   type: PropTypes.string,
+  value: PropTypes.string,
 };
 
 export default Mood;

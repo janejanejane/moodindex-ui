@@ -13,6 +13,7 @@
   "author": "Max Stoiber",
   "license": "MIT",
   "scripts": {
+    "debug": "cross-env NODE_ENV=development node --nolazy --inspect-brk=9229 server",
     "analyze:clean": "rimraf stats.json",
     "preanalyze": "npm run analyze:clean",
     "analyze": "node ./internals/scripts/analyze.js",

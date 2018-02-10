@@ -10,3 +10,6 @@
  */
 
 export const DEFAULT_LOCALE = 'en';
+export const MOOD_POST = 'moodio/App/MOOD_POST';
+export const MOOD_POST_SUCCESS = 'moodio/App/MOOD_POST_SUCCESS';
+export const MOOD_POST_ERROR = 'moodio/App/MOOD_POST_ERROR';

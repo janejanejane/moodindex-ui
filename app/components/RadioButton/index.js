@@ -10,11 +10,11 @@ import PropTypes from 'prop-types';
 
 
 function RadioButton(props) {
-  const { type } = props;
+  const { type, value } = props;
 
   return (
     <div>
-      <input id={type} name="mood" type="radio" />
+      <input id={type} name="mood" type="radio" value={value} />
       <label htmlFor={type}>{type}</label>
     </div>
   );
@@ -22,6 +22,7 @@ function RadioButton(props) {
 
 RadioButton.propTypes = {
   type: PropTypes.string,
+  value: PropTypes.string,
 };
 
 export default RadioButton;
