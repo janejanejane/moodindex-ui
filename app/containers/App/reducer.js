@@ -7,6 +7,7 @@
 import { fromJS } from 'immutable';
 
 import {
+  MOOD_SELECTED,
   MOOD_POST,
   MOOD_POST_SUCCESS,
   MOOD_POST_ERROR,
@@ -21,6 +22,9 @@ const initialState = fromJS({
 
 function appReducer(state = initialState, action) {
   switch (action.type) {
+    case MOOD_SELECTED:
+      return state
+        .set('currentMood', action.currentMood);
     case MOOD_POST:
       return state
         .set('loading', true)

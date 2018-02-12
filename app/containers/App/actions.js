@@ -5,10 +5,19 @@
  */
 
 import {
+  MOOD_SELECTED,
   MOOD_POST,
   MOOD_POST_SUCCESS,
   MOOD_POST_ERROR,
 } from './constants';
+
+export function selectedMood(mood) {
+  console.log('moodSelect!!!', mood);
+  return {
+    type: MOOD_SELECTED,
+    currentMood: mood,
+  };
+}
 
 export function submitMood(mood) {
   console.log('submitMood!!!', {
